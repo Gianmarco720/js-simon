@@ -1,16 +1,13 @@
 // seleziono l'elemento della DOM dove mostrare i numeri
 const containerEl = document.querySelector('.container');
 
-// creo una variabile per la scelta dell'utente
-let userChoice = [];
-
 // creo una variabile per i secondi
-let seconds = 30 * 1000;
+let seconds = 3 * 1000;
+
 
 // genero 5 numeri casuali con un ciclo for
 for (let i = 0; i < 5; i++) {
-    let numGen = getRndInteger(1, 100);
-
+    const numGen = getRndInteger(1, 100);
     // creo un elemento nella DOM dove salvare i numeri generati
     const numbers = document.createElement('div');
     numbers.classList.add('numbers');
@@ -21,9 +18,11 @@ for (let i = 0; i < 5; i++) {
 
     // imposto un timer che fa scomparire i numeri dopo 30s
     setTimeout(function () {
-        numbers.style.display = 'none';
-    }, seconds);
-
+        numbers.classList.add('hidden');
+        for (let i = 0; i < 5; i++) {
+            Number(prompt(`Inserisci il ${i + 1}° numero`)) 
+        }
+    }, seconds);    
 }
 
 
